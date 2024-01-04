@@ -8,11 +8,11 @@ function VideoContainer() {
 
   useEffect(() => {
     getVideoApi();
-  }, []);
+  }, [videos]);
 
   const getVideoApi = async () => {
     const data = await fetch(Youtube_Video_Api);
-    const json = await data.json();
+    const json = await data?.json();
     setVideos(json?.items);
   };
 
