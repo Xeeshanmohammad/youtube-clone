@@ -34,8 +34,8 @@ function LiveChat() {
       <form
         className="ml-2 w-[26rem]  p-2  border border-black"
         onSubmit={(e) => {
-            console.log("Form submitted")
-            console.log("Event:", e);
+            // console.log("Form submitted")
+            // console.log("Event:", e);
           e.preventDefault();
           dispatch(
             addMessage({
@@ -49,6 +49,7 @@ function LiveChat() {
         <input
           className="w-[18rem] px-2 border"
           type="text"
+          value={liveChat}
           onChange={(e) => {
             setLiveChat(e.target.value)}
           }
