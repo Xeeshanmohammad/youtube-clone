@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/AppSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentContainer from "./CommentContainer";
+import LiveChat from "./LiveChat";
 
 function WatchPage() {
   const dispatch = useDispatch();
@@ -11,8 +12,9 @@ function WatchPage() {
     dispatch(closeMenu());
   });
   return (
-<div>
-<div className="px-5">
+<div className="flex flex-col w-full">
+<div className="flex w-full">
+      <div>
       <iframe
         className="w-[900px] h-[28rem] p-4 m-2 rounded-[2rem]"
         src={"https://www.youtube.com/embed/" + searchVideos.get("v")}
@@ -21,6 +23,10 @@ function WatchPage() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
+      </div>
+      <div className="w-full">
+        <LiveChat/>
+      </div>
     </div>
     <CommentContainer/>
 </div>
